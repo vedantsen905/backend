@@ -1,8 +1,9 @@
 const express = require('express')
 const app = express()
 const port = 3000
+require('dotenv').config()
 
-const github = `{
+const github = {
   "login": "vedantsen905",
   "id": 120441464,
   "node_id": "U_kgDOBy3KeA",
@@ -37,7 +38,7 @@ const github = `{
   "created_at": "2022-12-13T05:09:59Z",
   "updated_at": "2025-01-30T08:52:51Z"
 }
-`
+
 
 
 app.get('/', (req, res) => {
@@ -68,6 +69,6 @@ app.get('/contact', (req,res) => {
 
 
 
-app.listen(port, () => {
+app.listen(process.env.PORT, () => {
   console.log(`Example app listening on port ${port}`)
 })
